@@ -190,8 +190,9 @@ public class Principal {
         var totalTemporadas = leitura.nextInt();
         System.out.println("Valor mínimo da avaliação:");
         var avaliacao = leitura.nextDouble();
-        List<Serie> seriesParaMaratonar = repositorio.findByTotalTemporadasLessThanEqualAndAvaliacaoGreaterThanEqual(totalTemporadas, avaliacao);
-        seriesParaMaratonar.forEach(s ->
+        //List<Serie> seriesParaMaratonar = repositorio.findByTotalTemporadasLessThanEqualAndAvaliacaoGreaterThanEqual(totalTemporadas, avaliacao);
+        List<Serie> seriesPorTemporadaEAvaliacao = repositorio.seriesPorTemporadaEAvaliacao(totalTemporadas, avaliacao);
+        seriesPorTemporadaEAvaliacao.forEach(s ->
                 System.out.println(s.getTitulo()  +  "Total de temporadas: " + s.getTotalTemporadas() +  " Avaliação: " + s.getAvaliacao()));
     }
 }
